@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resources([
+    'employees' => 'EmployeeController',
+    'companies' => 'CompanyController',
+]);
+
+Route::namespace('Admin')->prefix('admin')->as('admin.')->group(function() {
+    Route::resources([
+        'employees' => 'EmployeeController',
+        'companies' => 'CompanyController',
+    ]);
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
