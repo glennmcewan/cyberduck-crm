@@ -22,12 +22,14 @@ Route::resources([
     'companies' => 'CompanyController',
 ]);
 
-Route::namespace('Admin')->prefix('admin')->as('admin.')->group(function() {
+Route::namespace('Admin')->prefix('admin')->as('admin.')->middleware('auth')->group(function() {
     Route::resources([
         'employees' => 'EmployeeController',
         'companies' => 'CompanyController',
     ]);
 });
+
+Route::get('/admin', 'Admin\\DashboardController@index')->name('admin.index')->middleware('auth');
 
 Auth::routes(['register' => false]);
 
