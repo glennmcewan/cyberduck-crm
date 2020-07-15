@@ -22,12 +22,12 @@
                 <td>{{ $cell }}</td>
               @endforeach
                 <td>
-                  <a href="{{ route('admin.companies.show', $row['id']) }}">
+                  <a href="{{ route('admin.' . $entity_route_key . '.show', $row['id']) }}">
                     <i class="nav-icon fas fa-search"></i>
                   </a>
                 </td>
                 <td>
-                  <a href="{{ route('admin.companies.edit', $row['id']) }}">
+                  <a href="{{ route('admin.' . $entity_route_key . '.edit', $row['id']) }}">
                     <i class="nav-icon fas fa-edit"></i>
                   </a>
                 </td>

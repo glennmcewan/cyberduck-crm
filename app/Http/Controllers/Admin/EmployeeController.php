@@ -24,7 +24,7 @@ class EmployeeController extends Controller
             'admin.index',
             [
                 'title' => 'Employees Listing',
-                'create_link' => route('admin.employees.create'),
+                'entity_route_key' => 'employees',
                 'columns' => [
                     'First Name',
                     'Last Name',
@@ -74,7 +74,7 @@ class EmployeeController extends Controller
     public function show(Employee $employee)
     {
         return view(
-            'admin.show',
+            'admin.employee.show',
             [
                 'title' => 'View Employee',
                 'model' => $employee

@@ -24,7 +24,7 @@ class CompanyController extends Controller
             'admin.index',
             [
                 'title' => 'Companies Listing',
-                'create_link' => route('admin.companies.create'),
+                'entity_route_key' => 'companies',
                 'columns' => [
                     'Name',
                     'Email',
@@ -74,7 +74,7 @@ class CompanyController extends Controller
     public function show(Company $company)
     {
         return view(
-            'admin.show',
+            'admin.company.show',
             [
                 'title' => 'View Company',
                 'model' => $company

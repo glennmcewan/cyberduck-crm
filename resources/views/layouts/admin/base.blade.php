@@ -19,7 +19,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">{{ $title }}{!! (isset($create_link)) ? '&nbsp;<a href="'.$create_link.'"><i class="fa fa-fw fa-plus"></i></a>' : '' !!}</h1>
+            <h1 class="m-0 text-dark">{{ $title }}{!! (isset($entity_route_key)) ? '&nbsp;<a href="'.route('admin.'.$entity_route_key.'.create').'"><i class="fa fa-fw fa-plus"></i></a>' : '' !!}</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
